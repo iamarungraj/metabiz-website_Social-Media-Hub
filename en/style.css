@@ -1,0 +1,382 @@
+/* Define System Theme Colors */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #111827;
+    --nav-bg: #ffffff;
+    --nav-shadow: rgba(0,0,0,0.1);
+    --link-color: #4b5563;
+    --link-hover: #2563eb;
+    --dropdown-shadow: rgba(0,0,0,0.15);
+}
+
+/* Automatically switch to Dark Mode if the system is set to Dark */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #f3f4f6;
+        --nav-bg: #1f2937;
+        --nav-shadow: rgba(0,0,0,0.5);
+        --link-color: #d1d5db;
+        --link-hover: #60a5fa;
+        --dropdown-shadow: rgba(0,0,0,0.5);
+    }
+}
+
+/* Base Reset and Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navigation Bar Layout - 3 Columns */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 10px var(--nav-shadow); 
+    position: relative; 
+    transition: background-color 0.3s;
+}
+
+/* 1st Column: Logo */
+.nav-logo {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+/* 2nd Column: Title */
+.nav-title {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+}
+
+.title-link {
+    text-decoration: none; 
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color); /* This makes the text white in dark mode */
+    white-space: nowrap; 
+}
+
+/* 3rd Column: Navigation Links */
+.nav-links {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; 
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--link-hover); 
+}
+
+/* Mobile Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none !important;
+    outline: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color); /* This makes the 3 lines white in dark mode */
+    border-radius: 5px;
+}
+
+/* 1st Column: Logo */
+.nav-logo {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+}
+
+/* 2nd Column: Title */
+.nav-title {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+}
+
+.title-link {
+    text-decoration: none; 
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color) !important; 
+    white-space: nowrap; 
+}
+
+/* 3rd Column: Navigation Links */
+.nav-links {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; 
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--link-color) !important;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--link-hover) !important; 
+}
+
+/* Mobile Hamburger Button (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none !important;
+    outline: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color) !important;
+    border-radius: 5px;
+}
+
+/* Tablet and Mobile Responsive View */
+@media (max-width: 900px) {
+    .brand-title {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 75px; 
+        right: 5%; 
+        left: auto; 
+        width: 200px; 
+        background-color: var(--nav-bg); /* This forces the dropdown to match the dark theme */
+        text-align: left; 
+        padding: 15px 0;
+        box-shadow: 0 4px 10px var(--dropdown-shadow); 
+        border-radius: 8px; 
+        z-index: 1000; 
+    }
+
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .nav-link {
+        padding: 15px 25px; 
+    }
+
+    /* Pushes the button strictly to the right while balancing the logo */
+    .hamburger {
+        display: flex; 
+        flex-direction: column;
+        flex: 1; 
+        align-items: flex-end; 
+        justify-content: center;
+        min-width: 45px;
+    }
+}
+
+/* --- THEME VARIABLES (Light Mode Default) --- */
+:root {
+  --hub-bg: #ffffff;
+  --hub-dots: #111827;
+  --hub-shadow: rgba(0, 0, 0, 0.15);
+  
+  --editor-bg: #ffffff;
+  --editor-text: #111827;
+  --editor-border: #e5e7eb;
+  --editor-label: #6b7280;
+  
+  --btn-bg: #f3f4f6;
+  --btn-text: #111827;
+  --btn-hover: #e5e7eb;
+  
+  --input-bg: #f9fafb;
+  --input-text: #111827;
+  --input-border: #d1d5db;
+  --input-focus: #2563eb;
+}
+
+/* --- THEME VARIABLES (Dark Mode Override) --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hub-bg: #1f2937;
+    --hub-dots: #ffffff;
+    --hub-shadow: rgba(0, 0, 0, 0.5);
+    
+    --editor-bg: #1a1a1a;
+    --editor-text: #ffffff;
+    --editor-border: #333333;
+    --editor-label: #aaaaaa;
+    
+    --btn-bg: #333333;
+    --btn-text: #ffffff;
+    --btn-hover: #2563eb;
+    
+    --input-bg: #222222;
+    --input-text: #ffffff;
+    --input-border: #444444;
+    --input-focus: #3b82f6;
+  }
+}
+
+/* --- BASE HUB LAYOUT --- */
+.floating-hub {
+  position: fixed;
+  z-index: 999999 !important; /* Forces it to the absolute front */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.floating-hub.pos-bottom-right { bottom: 30px; right: 30px; left: auto; top: auto; transform: none; }
+.floating-hub.pos-bottom-left { bottom: 30px; left: 30px; right: auto; top: auto; transform: none; }
+.floating-hub.pos-bottom-center { bottom: 30px; left: 50%; right: auto; top: auto; transform: translateX(-50%); }
+.floating-hub.pos-center { top: 50%; left: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%); }
+
+/* --- SOCIAL MENU LIST --- */
+.social-menu { list-style: none; padding: 0; margin: 0; pointer-events: none; }
+
+.social-menu li {
+  position: absolute;
+  bottom: 8px;
+  opacity: 0;
+  transform: translate(0, 0) scale(0.5); 
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: calc(var(--i) * 0.05s);
+}
+
+.social-menu a {
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 50%;
+  color: white; text-decoration: none;
+  font-family: sans-serif; font-weight: bold;
+  box-shadow: 0 4px 8px var(--hub-shadow);
+  transition: transform 0.2s;
+}
+
+/* Ensures FontAwesome icons fit perfectly inside the circles */
+.social-menu a i {
+  font-size: 24px; /* Adjust this value to make the icon bigger or smaller */
+  color: white;
+}
+
+.social-menu a:hover { transform: scale(1.15); }
+
+.social-menu.is-open { pointer-events: auto; }
+.social-menu.is-open li {
+  opacity: 1;
+  transform: translate(var(--x), var(--y)) scale(1);
+}
+
+/* --- 9-DOT BUTTON --- */
+.bento-button {
+  width: 64px; height: 64px; border-radius: 50%;
+  background-color: var(--hub-bg); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px var(--hub-shadow);
+  position: relative; z-index: 10;
+  transition: background-color 0.3s;
+}
+.bento-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  width: 24px; height: 24px; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bento-grid span {
+  background-color: var(--hub-dots); border-radius: 50%; width: 100%; height: 100%;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s;
+}
+.bento-button.is-active .bento-grid { transform: rotate(45deg); }
+.bento-button.is-active .bento-grid span:nth-child(2),
+.bento-button.is-active .bento-grid span:nth-child(4),
+.bento-button.is-active .bento-grid span:nth-child(6),
+.bento-button.is-active .bento-grid span:nth-child(8) { opacity: 0; transform: scale(0.5); }
+
+/* --- EDITOR PANEL --- */
+.editor-panel {
+  position: absolute; bottom: 80px; width: 280px;
+  background: var(--editor-bg); color: var(--editor-text); padding: 20px;
+  border-radius: 12px; box-shadow: 0 10px 25px var(--hub-shadow);
+  font-family: sans-serif; transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+  z-index: 20; max-height: 70vh; overflow-y: auto;
+}
+
+.floating-hub.pos-bottom-right .editor-panel { right: 0; }
+.floating-hub.pos-bottom-left .editor-panel { left: 0; }
+.floating-hub.pos-bottom-center .editor-panel { left: 50%; transform: translateX(-50%); }
+.floating-hub.pos-center .editor-panel { top: 80px; bottom: auto; left: 50%; transform: translateX(-50%); }
+
+.editor-panel.hidden { opacity: 0; pointer-events: none; transform: translateY(20px) scale(0.95); }
+.editor-panel h4 { margin: 0 0 15px 0; font-size: 18px; border-bottom: 1px solid var(--editor-border); padding-bottom: 10px;}
+.editor-label { margin: 0 0 10px 0; font-size: 13px; color: var(--editor-label); font-weight: bold;}
+
+.pos-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.edit-btn, .close-edit-btn {
+  padding: 8px; background: var(--btn-bg); color: var(--btn-text);
+  border: none; border-radius: 6px; cursor: pointer; font-size: 13px;
+  transition: background-color 0.2s;
+}
+.edit-btn:hover { background: var(--btn-hover); }
+.close-edit-btn { background: #e4405f; color: white; margin-top: 15px; width: 100%; padding: 12px;}
+.close-edit-btn:hover { background: #c82343; }
+
+/* Link Inputs */
+.link-group { margin-bottom: 12px; }
+.link-group label { display: block; font-size: 12px; margin-bottom: 4px; color: var(--editor-text);}
+.link-group input {
+  width: 100%; padding: 8px; border-radius: 4px; border: 1px solid var(--input-border);
+  background: var(--input-bg); color: var(--input-text); box-sizing: border-box; font-size: 13px;
+}
+.link-group input:focus { outline: none; border-color: var(--input-focus); }

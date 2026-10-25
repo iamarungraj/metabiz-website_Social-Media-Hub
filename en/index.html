@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metabiz Technologies</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Load the FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Connect to CSS (Only need this once!) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar (3 Columns) -->
+    <nav class="navbar">
+        
+        <!-- 1st Column: Logo (Left) -->
+        <div class="nav-logo">
+            <a href="/en/index.html">
+                <img src="../images/logo.png" alt="Metabiz Technologies Logo" class="logo">
+            </a>
+        </div>
+        
+        <!-- 2nd Column: Title (Center) -->
+        <div class="nav-title">
+            <a href="/en/index.html" class="title-link">
+                <h1 class="brand-title">Metabiz Technologies</h1>
+            </a>
+        </div>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- 3rd Column: Navigation Links (Right) -->
+        <div class="nav-links" id="nav-menu">
+            <a href="/en/index.html" class="nav-link active">Home</a>
+            <a href="/en/services.html" class="nav-link">Services</a>
+            <a href="/en/gallery.html" class="nav-link">Gallery</a>
+            <a href="/en/contact.html" class="nav-link">Contact Us</a>
+        </div>
+
+    </nav>
+
+  <!-- ========================================== -->
+  <!-- THE FLOATING SOCIAL HUB                    -->
+  <!-- ========================================== -->
+  <div class="floating-hub pos-bottom-right" id="hub-container">
+    
+    <!-- The Social Icons -->
+    <ul class="social-menu" id="social-menu">
+      <li style="--i:0"><a href="https://www.facebook.com/metabiztech.in.kerala/" target="_blank" style="background: #1877F2;"><i class="fa-brands fa-facebook"></i></a></li>
+      <li style="--i:1"><a href="https://x.com/Metabiztech" target="_blank" style="background: #1DA1F2;"><i class="fa-brands fa-x-twitter"></i></a></li>
+      <li style="--i:2"><a href="https://in.pinterest.com/metabiztechinkerala/" target="_blank" style="background: #E60023;"><i class="fa-brands fa-pinterest-p"></i></a></li>
+      <li style="--i:3"><a href="https://www.youtube.com/@Metabiztech.in.kerala" target="_blank" style="background: #E60023;"><i class="fa-brands fa-youtube"></i></a></li>  
+    </ul>
+
+    <!-- The 9-Dot Main Button -->
+    <button id="menu-toggle" class="bento-button" aria-label="Open menu" aria-expanded="false">
+      <div class="bento-grid">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+    
+  </div> <!-- This is the end of your hub -->
+
+  <!-- JavaScript loads exactly ONCE at the very bottom -->
+  <script src="script.js"></script>
+
+</body>
+</html>
